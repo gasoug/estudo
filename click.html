@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantos Cliques</title>
+</head>
+<body>
+    <canvas id="canvas" width="300" height="300" style="border: 2px solid; margin-left: 50%; margin-top: 30%; transform:translate(-50%,-90%)"></canvas>
+    
+<script>
+    var cnv = document.getElementById('canvas')
+    var ctx = cnv.getContext('2d')
+
+    var target = 20
+    var targX = targY = 20
+
+    var score = 0
+    var mouseX = 0
+    var mouseY = 0
+
+    cnv.addEventListener('click', render)
+
+    function loop(){
+        window.requestAnimationFrame(loop, cnv)
+        update()
+
+    }
+    function update(){
+
+    }
+    function render(){
+        ctx.clearRect(0,0,300,300)
+        ctx.fillStyle = 'blue'
+        ctx.fillRect(targX = Math.floor(Math.random() * 280),
+                     targY = Math.floor(Math.random() * 280), target, target)
+        ctx.fill()
+        ctx.fillStyle = 'red'
+        ctx.fillText('Score: '+ score,10,10)
+        score++
+        console.log(score)
+    }
+    loop()
+</script>    
+</body>
+
+</html>
