@@ -1,0 +1,92 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: url(fundo.jpg);
+	background-size: cover;
+	font-family: 'lato';
+}
+.log {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	padding: 40px;
+	background: rgba(0,0,0, .4);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.8);
+	border-radius: 10px;
+}
+.log h1{
+	margin: 0 0 30px;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+}
+.log .input {
+	position: relative; /*A POSIÇÃO SE ADAPTA AO TAMANHO DA PG*/
+}
+.log .input input{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	letter-spacing: 2px;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: : 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+.log .input label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 18px;
+	color: #fff;
+	pointer-events: none;
+	transition: .5s;
+}
+.log .input input:focus ~ label,
+.log .input input:valid ~ label
+{/*quando a input estiver em foco, a letra vai subir e dimuir a fonte*/
+	top: -18px;
+	left: 0;
+	color: #03a9f4;
+	font-size: 14px;
+}
+.log input[type="text"],.log input[type="password"]{
+	border-bottom: 2px solid rgba(255,255,255,.5);
+}
+.log input[type="submit"]{
+	position: relative;
+	margin-left: 80px;
+	text-align: center;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	color: rgb(255, 255, 255);
+	background: rgb(3,169,244); 
+	font-size: 15px;
+	box-shadow: 0 3px 0 rgb(4,132,190);
+	padding: 10px 50px;
+	cursor: pointer;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+.log input[type="submit"]:hover{
+	background:transparent;
+	outline: none;
+	color: #fff;
+	background: #0484be;
+	box-shadow: 0 3px 0 rgb(4,94,135);
+	padding: 10px 50px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.log input[type="submit"]:active{
+	position: relative;
+	box-shadow: none;
+	top: 3px;	
+}

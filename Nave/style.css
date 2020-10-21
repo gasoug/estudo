@@ -1,0 +1,12 @@
+#canvas {
+    background-image: url(fundo.jpg);
+    animation: animarfundo 5s linear infinite;
+}
+@keyframes animarfundo{
+    from{
+        background-position-y: 0px;
+    }
+    to{
+        background-position-y: 1334px;
+    }
+}
