@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id = "shape">
+    <div id="relogio" class="clock" onload="mostrar()"></div>
+<style>
+    body{
+  background:black;
+}
+    .clock{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  color:white;
+  font-size: 60px;
+  font-family: Orbitron;
+  letter-spacing: 8px;
+}
+</style>
+<script>
+function mostrar(){
+  var data = new Date()      
+  var h = data.getHours()
+  var m = data.getMinutes()
+  var s = data.getSeconds()  
+  var seassion = "AM"
+  
+  if(h>12){
+    seassion = "PM"
+  }
+   h = (h < 10) ? "0" + h : h  //? = if : =se não
+   m = (m < 10) ? "0" + m : m;
+   s = (s < 10) ? "0" + s : s;
+  
+  var corpo = document.getElementById("shape")
+       if(s >= 0){
+         corpo.style.background = RandomColor()
+       } 
+  function RandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+  var time = h+":"+m+":"+s+" "+ seassion
+  document.getElementById("relogio").innerText = time
+  document.getElementById("relogio").textContent = time
+  
+  setTimeout(mostrar, 1000)
+} 
+mostrar()  
+</script>    
+</body>
+</html>
