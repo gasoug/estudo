@@ -1,0 +1,2 @@
+# estudo
+Alguns exercícios
